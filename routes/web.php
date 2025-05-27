@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\OrderAdminController;
 
 Route::get('/admin/orders', [OrderAdminController::class, 'index']);
 Route::post('/admin/orders/{id}/update-status', [OrderAdminController::class, 'updateStatus']);
+Route::get('/admin/orders/{id}', [OrderAdminController::class, 'show']);
 
 Route::get('/reset-password/{token}', function ($token) {
     $email = request()->query('email');

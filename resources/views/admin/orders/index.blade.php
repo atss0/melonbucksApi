@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <title>Admin - Siparişler</title>
@@ -70,6 +71,7 @@
         }
     </style>
 </head>
+
 <body>
     <h2>🧾 Sipariş Listesi</h2>
 
@@ -99,7 +101,7 @@
                         <form method="POST" action="/admin/orders/{{ $order->id }}/update-status">
                             @csrf
                             <select name="status" onchange="this.form.submit()">
-                                @foreach(['pending','preparing','ready','served','cancelled'] as $status)
+                                @foreach(['pending', 'preparing', 'ready', 'served', 'cancelled'] as $status)
                                     <option value="{{ $status }}" {{ $order->status === $status ? 'selected' : '' }}>
                                         {{ ucfirst($status) }}
                                     </option>
@@ -108,11 +110,12 @@
                         </form>
                     </td>
                     <td>
-                        <a href="/api/orders/{{ $order->id }}" target="_blank">Detay</a>
+                        <a href="/orders/{{ $order->id }}" target="_blank">Detay</a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 </body>
+
 </html>

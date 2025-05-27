@@ -26,4 +26,10 @@ class OrderAdminController extends Controller
 
         return redirect()->back()->with('success', 'Durum güncellendi.');
     }
+
+    public function show($id)
+{
+    $order = \App\Models\Order::with('items.product', 'user', 'table')->findOrFail($id);
+    return view('admin.orders.show', compact('order'));
+}
 }

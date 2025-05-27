@@ -110,7 +110,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="/orders/{{ $order->id }}" target="_blank">Detay</a>
+                        <a href="admin/orders/{{ $order->id }}" target="_blank">Detay</a>
                     </td>
                 </tr>
             @endforeach
